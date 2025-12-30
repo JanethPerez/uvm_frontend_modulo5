@@ -78,6 +78,17 @@
 		width: 900px;
 		height: 300px;
 		margin: 0 auto;
+		margin-top: -50px;
+		
+		
+		position: absolute; /* Saca al div del flujo normal */
+    top: 50%;           /* Lo posiciona verticalmente */
+    left: 50%;          /* Lo posiciona horizontalmente */
+    transform: translate(-50%, -50%); /* Centra el div exactamente */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para legibilidad */
+    color: white;
+    padding: 10px;
+    z-index: 1;
 		">
 		¡Hola! Este es el contenido oculto.
 	</div>

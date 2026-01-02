@@ -1,469 +1,503 @@
 ***** HTML *****
 <!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOTEL</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <span class="hamburger-btn material-symbols-rounded"></span>
-            <a class="logo">
-                <img src="images/logo_hotel.jpg" alt="logo">
-                <h2>HOTEL</h2>
-            </a>
-            <ul class="links">
-                <span class="close-btn material-symbols-rounded"></span>
-                <li><a href="#" id="clima">CONSULTAR CLIMA</a></li>
-                <li><a href="#" id="bebidas">SERVICIO DE BEBIDAS</a></li>
-                <li><a href="#" id="habitaciones">HABITACIONES</a></li>
-            </ul>
-            <a>
-                <button class="login-btn">
-                    <h2>LOGIN</h2>
-                </button>
-            </a>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website with Login & Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <a href="#" class="nav_logo">CodingLab</a>
+        <ul class="nav_items">
+          <li class="nav_item">
+            <a href="#" class="nav_link" id="form-openClima">CONSULTAR CLIMA</a>
+            <a href="#" class="nav_link" id="form-openBebidas">CONSULTAR BEBIDAS</a>
+            <a href="#" class="nav_link" id="form-openHabitaciones">CONSULTAR HABITACIONES</a>
+          </li>
+        </ul>
+        <button class="button" id="form-open">Login</button>
+      </nav>
     </header>
-    <div class="blur-bg-overlay"></div>
-    <div class="form-popup">
-        <span class="close-btn material-symbols-rounded">X</span>
-        <div class="form-box login">
-            <div class="form-details">
+    <!-- Home -->
+    <section class="home">
+      <div class="form_container">
+        <i class="uil uil-times form_close"></i>
+        <div class="form login_form">
+          <form action="#">
+            <h2>Login</h2>
+            <div class="input_box">
+              <input type="text" id="usuarioLogin" placeholder="Usuario" required />
+              <i class="uil uil-user usuario"></i>
             </div>
-            <div class="form-content">
-                <h2>INICIAR SESIÓN</h2>
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" required>
-                        <label>Usuario</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" required>
-                        <label>Contraseña</label>
-                    </div>
-                    <button type="submit">Iniciar sesión</button>
-                </form>
+            <div class="input_box">
+              <input type="password" id="password" placeholder="Contraseña" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide"></i>
             </div>
+            <button class="button" onclick="validarLogin()">Login Now</button>      
+          </form>
         </div>
-    </div>
-
-
-    <div id="consultarClima" style="display: none; background-color: #f0f0f0; width: 900px; height: 300px; 
-    margin: 0 auto; margin-top: -50px; position: absolute; /* Saca al div del flujo normal */
-    top: 50%;           /* Lo posiciona verticalmente */
-    left: 50%;          /* Lo posiciona horizontalmente */
-    transform: translate(-50%, -50%); /* Centra el div exactamente */
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para legibilidad */
-    color: #0F5DAF; padding: 10px; z-index: 1; ">
-        ¡Hola! Aqui puedes consultar el clima.
-    </div>
-
-    <div id="consultarBebidas" style="display: none; background-color: #f0f0f0; width: 900px; height: 300px; 
-    margin: 0 auto; margin-top: -50px; position: absolute; top: 50%;  left: 50%; 
-    transform: translate(-50%, -50%); background-color: rgba(255, 255, 255, 0.8);
-    color: #0F5DAF; padding: 10px; z-index: 1; ">
-		¡Hola! Aqui puedes consultar las bebidas que manejamos.
-	</div>
-
-    <div id="consultarHabitaciones" style="display: none; background-color: #f0f0f0; width: 900px; height: 300px; 
-    margin: 0 auto; margin-top: -50px; position: absolute; top: 50%;  left: 50%;  transform: translate(-50%, -50%); 
-    background-color: rgba(255, 255, 255, 0.8); color: #0F5DAF; padding: 10px; z-index: 1; ">
-		¡Hola! Aqui puedes consultar los tipos de habitaciones que manejamos.
-	</div>
-
-</body>
+      </div>
+    </section>
+	
+	<!-- Clima -->
+    <section class="homeClima">
+      <div class="form_containerClima" style="height: 400px;">
+        <i class="uil uil-times form_closeClima"></i>
+        
+        <div class="form login_form">
+          <form action="#">
+            <h2>CONSULTAR EL CLIMA</h2>
+            <div class="input_box">
+              <input type="email" placeholder="Enter your email" required />
+              <i class="uil uil-envelope-alt email"></i>
+            </div>
+            <div class="input_box">
+              <input type="password" placeholder="Enter your password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hideClima"></i>
+            </div>
+          </form>
+        </div>
+    </section>
+	
+	<!-- Bebidas -->
+    <section class="homeBebidas">
+      <div class="form_containerBebidas" style="height: 400px;">
+        <i class="uil uil-times form_closeBebidas"></i>
+        <div class="form login_form">
+          <form action="#">
+            <h2>CONSULTAR EL SERVICIO DE BEBIDAS</h2>
+            <div class="input_box">
+              <input type="email" placeholder="Enter your email" required />
+              <i class="uil uil-envelope-alt email"></i>
+            </div>
+            <div class="input_box">
+              <input type="password" placeholder="Enter your password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hideBebidas"></i>
+            </div>
+          </form>
+        </div>
+    </section>
+	
+	<!-- HABITACIONES -->
+    <section class="homeHabitaciones">
+      <div class="form_containerHabitaciones" style="height: 400px;">
+        <i class="uil uil-times form_closeHabitaciones"></i>
+        <div class="form login_form">
+          <form action="#">
+            <h2>CONSULTAR EL SERVICIO DE LAS HABITACIONES</h2>
+            <div class="input_box">
+              <input type="email" placeholder="Enter your email" required />
+              <i class="uil uil-envelope-alt email"></i>
+            </div>
+            <div class="input_box">
+              <input type="password" placeholder="Enter your password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hideHabitaciones"></i>
+            </div>
+          </form>
+        </div>
+    </section>
+	
+    <script src="script.js"></script>
+  </body>
 </html>
 
 ***** CSS *****
-/* Importing Google font - Open Sans */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-body {
-    height: 100vh;
-    width: 100%;
-    background: url("images/img_hotel_inicio.jpg") center/cover no-repeat;
+a {
+  text-decoration: none;
 }
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    padding: 0 10px;
+.header {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+  padding: 0 20px;
 }
-.navbar {
-    display: flex;
-    padding: 22px 0;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: space-between;
+.nav {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
 }
-.navbar .hamburger-btn {
-    display: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1.5rem;
+.nav,
+.nav_item {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
-.navbar .logo {
-    gap: 10px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+.nav_logo,
+.nav_link,
+.button {
+  color: #fff;
 }
-.navbar .logo img {
-    width: 40px;
-    border-radius: 50%;
+.nav_logo {
+  font-size: 25px;
 }
-.navbar .logo h2 {
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.7rem;
+.nav_item {
+  column-gap: 25px;
 }
-.navbar .links {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-    align-items: center;
+.nav_link:hover {
+  color: #d9d9d9;
 }
-.navbar .close-btn {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    display: none;
-    color: #000;
-    cursor: pointer;
+.button {
+  padding: 6px 24px;
+  border: 2px solid #fff;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
 }
-.navbar .links a {
-    color: #0F5DAF;
-    font-size: 1.5rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: 0.1s ease;
+.button:active {
+  transform: scale(0.98);
 }
-.navbar .links a:hover {
-    color: #fff;
+/* Home */
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("website-forms-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
-.navbar .login-btn {
-    border: none;
-    outline: none;
-    background:  none;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: 0.15s ease;
+.home::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
 }
-.navbar .login-btn:hover {
-    background: none;
-    color: #0F5DAF;
-}
-.form-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 10;
-    width: 100%;
-    opacity: 0;
-    pointer-events: none;
-    max-width: 720px;
-    background: #fff;
-    border: 2px solid #fff;
-    transform: translate(-50%, -70%);
-}
-.show-popup .form-popup {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s ease, opacity 0.1s;
-}
-.form-popup .close-btn {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    color: #878484;
-    cursor: pointer;
-}
-.blur-bg-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    pointer-events: none;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    transition: 0.1s ease;
-}
-.show-popup .blur-bg-overlay {
-    opacity: 1;
-    pointer-events: auto;
-}
-.form-popup .form-box {
-    display: flex;
-}
-.form-box .form-details {
-    width: 100%;
-    color: #fff;
-    max-width: 330px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.login .form-details {
-    
-    background: url("images/logo_hotel.jpg");
-    background-position: center;
-    background-size: cover;
-}
-.signup .form-details {
-    padding: 0 20px;
-    background-position: center;
-    background-size: cover;
-}
-.form-box .form-content {
-    width: 100%;
-    padding: 35px;
-}
-.form-box h2 {
-    text-align: center;
-    margin-bottom: 29px;
-}
-form .input-field {
-    position: relative;
-    height: 50px;
-    width: 100%;
-    margin-top: 20px;
-}
-.input-field input {
-    height: 100%;
-    width: 100%;
-    background: none;
-    outline: none;
-    font-size: 0.95rem;
-    padding: 0 15px;
-    border: 1px solid #717171;
-    border-radius: 3px;
-}
-.input-field input:focus {
-    border: 1px solid #00bcd4;
-}
-.input-field label {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    color: #4a4646;
-    pointer-events: none;
-    transition: 0.2s ease;
-}
-.input-field input:is(:focus, :valid) {
-    padding: 16px 15px 0;
-}
-.input-field input:is(:focus, :valid)~label {
-    transform: translateY(-120%);
-    color: #00bcd4;
-    font-size: 0.75rem;
-}
-.form-box a {
-    color: #00bcd4;
-    text-decoration: none;
-}
-.form-box a:hover {
-    text-decoration: underline;
-}
-form :where(.forgot-pass-link, .policy-text) {
-    display: inline-flex;
-    margin-top: 13px;
-    font-size: 0.95rem;
-}
-form button {
-    width: 100%;
-    color: #fff;
-    border: none;
-    outline: none;
-    padding: 14px 0;
-    font-size: 1rem;
-    font-weight: 500;
-    border-radius: 3px;
-    cursor: pointer;
-    margin: 25px 0;
-    background: #00bcd4;
-    transition: 0.2s ease;
-}
-form button:hover {
-    background: #0097a7;
-}
-.form-content .bottom-link {
-    text-align: center;
-}
-.form-popup .signup,
-.form-popup.show-signup .login {
-    display: none;
-}
-.form-popup.show-signup .signup {
-    display: flex;
-}
-.signup .policy-text {
-    display: flex;
-    margin-top: 14px;
-    align-items: center;
-}
-.signup .policy-text input {
-    width: 14px;
-    height: 14px;
-    margin-right: 7px;
-}
-@media (max-width: 950px) {
-    .navbar :is(.hamburger-btn, .close-btn) {
-        display: block;
-    }
-    .navbar {
-        padding: 15px 0;
-    }
-    .navbar .logo img {
-        display: none;
-    }
-    .navbar .logo h2 {
-        font-size: 1.4rem;
-    }
-    .navbar .links {
-        position: fixed;
-        top: 0;
-        z-index: 10;
-        left: -100%;
-        display: block;
-        height: 100vh;
-        width: 100%;
-        padding-top: 60px;
-        text-align: center;
-        background: #fff;
-        transition: 0.2s ease;
-    }
-    .navbar .links.show-menu {
-        left: 0;
-    }
-    .navbar .links a {
-        display: inline-flex;
-        margin: 20px 0;
-        font-size: 1.2rem;
-        color: #000;
-    }
-    .navbar .links a:hover {
-        color: #00BCD4;
-    }
-    .navbar .login-btn {
-        font-size: 0.9rem;
-        padding: 7px 10px;
-    }
-}
-@media (max-width: 760px) {
-    .form-popup {
-        width: 95%;
-    }
-    .form-box .form-details {
-        display: none;
-    }
-    .form-box .form-content {
-        padding: 30px 20px;
-    }
+.home.show::before {
+  opacity: 1;
+  pointer-events: auto;
 }
 
+
+
+
+/* From */
+.form_container {
+  position: fixed;
+  max-width: 320px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+.home.show .form_container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.form_containerClima {
+  position: fixed;
+  max-width: 2000px;
+  width: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+
+
+.homeClima.show .form_containerClima {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  height: 500px;
+}
+
+.form_containerBebidas {
+  position: fixed;
+  max-width: 2000px;
+  width: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+
+
+.homeBebidas.show .form_containerBebidas {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  height: 500px;
+}
+
+.form_containerHabitaciones {
+  position: fixed;
+  max-width: 2000px;
+  width: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+
+
+.homeHabitaciones.show .form_containerHabitaciones {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  height: 500px;
+}
+
+
+.signup_form {
+  display: none;
+}
+.form_container.active .signup_form {
+  display: block;
+}
+.form_container.active .login_form {
+  display: none;
+}
+.form_close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #0b0217;
+  font-size: 22px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.form_container h2 {
+  font-size: 22px;
+  color: #0b0217;
+  text-align: center;
+}
+.input_box {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+}
+.input_box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 30px;
+  color: #333;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #aaaaaa;
+}
+.input_box input:focus {
+  border-color: #7d2ae8;
+}
+.input_box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #707070;
+}
+.input_box i.usuario,
+.input_box i.password {
+  left: 0;
+}
+.input_box input:focus ~ i.usuario,
+.input_box input:focus ~ i.password {
+  color: #7d2ae8;
+}
+.input_box i.pw_hide {
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+.option_field {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form_container a {
+  color: #7d2ae8;
+  font-size: 12px;
+}
+.form_container a:hover {
+  text-decoration: underline;
+}
+.checkbox {
+  display: flex;
+  column-gap: 8px;
+  white-space: nowrap;
+}
+.checkbox input {
+  accent-color: #7d2ae8;
+}
+.checkbox label {
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: #0b0217;
+}
+.form_container .button {
+  background: #7d2ae8;
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.login_signup {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
 
 ***** JS *****
-const navbarMenu = document.querySelector(".navbar .links");
-const hamburgerBtn = document.querySelector(".hamburger-btn");
-const hideMenuBtn = navbarMenu.querySelector(".close-btn");
-const formPopup = document.querySelector(".form-popup");
-const hidePopupBtn = formPopup.querySelector(".close-btn");
-const signupLoginLink = formPopup.querySelectorAll(".bottom-link a");
-const showPopupLogin = document.querySelector(".login-btn");
+const formOpenBtn = document.querySelector("#form-open"),
+home = document.querySelector(".home"),
+formCloseBtn = document.querySelector(".form_close"),
+pwShowHide = document.querySelectorAll(".pw_hide");
 
+formOpenBtn.addEventListener("click", () => home.classList.add("show"));
+formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
 
-// Show mobile menu
-hamburgerBtn.addEventListener("click", () => {
-    navbarMenu.classList.toggle("show-menu");
-});
-
-// Hide mobile menu
-hideMenuBtn.addEventListener("click", () =>  hamburgerBtn.click());
-
-// Show login popup
-showPopupLogin.addEventListener("click", () => {
-    document.body.classList.toggle("show-popup");
-});
-
-// Hide login popup
-hidePopupBtn.addEventListener("click", () => showPopupLogin.click());
-
-// Show or hide signup form
-signupLoginLink.forEach(link => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        formPopup.classList[link.id === 'signup-link' ? 'add' : 'remove'];
-    });
-});
-
-
-
-///CODIGO PARA MOSTRAR DIV DE CLIMA
-const clicClima = document.getElementById('clima');
-const divClima = document.getElementById('consultarClima');
-
-// Añadimos el evento de clic
-clicClima.addEventListener('click', function(event) {
-    event.preventDefault(); // Evita que el enlace recargue la página
-    
-    // Cambiamos el estilo de display
-    if (divClima.style.display === 'none') {
-      divClima.style.display = 'block';
+pwShowHide.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    let getPwInput = icon.parentElement.querySelector("input");
+    if (getPwInput.type === "password") {
+      getPwInput.type = "text";
+      icon.classList.replace("uil-eye-slash", "uil-eye");
     } else {
-      divClima.style.display = 'none'; // Esto permite ocultarlo de nuevo si se vuelve a clicar
+      getPwInput.type = "password";
+      icon.classList.replace("uil-eye", "uil-eye-slash");
     }
   });
-
-
-///CODIGO PARA MOSTRAR DIV DE BEBIDAS
-const clicBebidas = document.getElementById('bebidas');
-const divBebidas = document.getElementById('consultarBebidas');
-
-clicBebidas.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    
-    if (divBebidas.style.display === 'none') {
-      divBebidas.style.display = 'block';
-    } else {
-      divBebidas.style.display = 'none'; 
-    }
 });
 
-///CODIGO PARA MOSTRAR DIV DE HABITACIONES
-const clicHabit = document.getElementById('habitaciones');
-const divHabit = document.getElementById('consultarHabitaciones');
+// CODIGO PARA MENU DEL CLIMA
+const formOpenBtnClima = document.querySelector("#form-openClima"),
+homeClima = document.querySelector(".homeClima"),
+formCloseBtnClima = document.querySelector(".form_closeClima"),
+pwShowHideClima = document.querySelectorAll(".pw_hideClima");
 
-clicHabit.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    
+formOpenBtnClima.addEventListener("click", () => homeClima.classList.add("show"));
+formCloseBtnClima.addEventListener("click", () => homeClima.classList.remove("show"));
 
-    if (divHabit.style.display === 'none') {
-      divHabit.style.display = 'block';
+pwShowHideClima.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    let getPwInput = icon.parentElement.querySelector("input");
+    if (getPwInput.type === "password") {
+      getPwInput.type = "text";
+      icon.classList.replace("uil-eye-slash", "uil-eye");
     } else {
-      divHabit.style.display = 'none'; 
+      getPwInput.type = "password";
+      icon.classList.replace("uil-eye", "uil-eye-slash");
     }
+  });
 });
+
+
+// CODIGO PARA MENU DEL LAS BEBIDAS
+const formOpenBtnBebidas = document.querySelector("#form-openBebidas"),
+homeBebidas = document.querySelector(".homeBebidas"),
+formCloseBtnBebidas = document.querySelector(".form_closeBebidas"),
+pwShowHideBebidas = document.querySelectorAll(".pw_hideBebidas");
+
+formOpenBtnBebidas.addEventListener("click", () => homeBebidas.classList.add("show"));
+formCloseBtnBebidas.addEventListener("click", () => homeBebidas.classList.remove("show"));
+
+pwShowHideBebidas.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    let getPwInput = icon.parentElement.querySelector("input");
+    if (getPwInput.type === "password") {
+      getPwInput.type = "text";
+      icon.classList.replace("uil-eye-slash", "uil-eye");
+    } else {
+      getPwInput.type = "password";
+      icon.classList.replace("uil-eye", "uil-eye-slash");
+    }
+  });
+});
+ 
+// CODIGO PARA MENU DE LAS HABITACIONES
+const formOpenBtnHabitaciones = document.querySelector("#form-openHabitaciones"),
+homeHabitaciones = document.querySelector(".homeHabitaciones"),
+formCloseBtnHabitaciones = document.querySelector(".form_closeHabitaciones"),
+pwShowHideHabitaciones = document.querySelectorAll(".pw_hidHabitaciones");
+
+formOpenBtnHabitaciones.addEventListener("click", () => homeHabitaciones.classList.add("show"));
+formCloseBtnHabitaciones.addEventListener("click", () => homeHabitaciones.classList.remove("show"));
+
+pwShowHideHabitaciones.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    let getPwInput = icon.parentElement.querySelector("input");
+    if (getPwInput.type === "password") {
+      getPwInput.type = "text";
+      icon.classList.replace("uil-eye-slash", "uil-eye");
+    } else {
+      getPwInput.type = "password";
+      icon.classList.replace("uil-eye", "uil-eye-slash");
+    }
+  });
+});
+
+//VALIDAR USUARIO Y CONTRASEÑA
+function validarLogin() {
+    // Obtener valores de los campos
+    const user = document.getElementById('usuarioLogin').value;
+    const pass = document.getElementById('password').value;
+
+    // Credenciales de prueba
+    const usuarioCorrecto = "admin";
+    const passwordCorrecto = "1234";
+
+    if (user === usuarioCorrecto && pass === passwordCorrecto) {
+        window.location.href = "consultas.html"; 
+    } else {
+        alert("Usuario o contraseña incorrectos");
+    }
+}
